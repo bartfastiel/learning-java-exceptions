@@ -36,3 +36,5 @@
   * und für Andi und Marge läuft alles wie gewöhnlich?
 
 ## Life-Coding Marge's Pizza
+
+Siehe [Marge](tonispizzaofen/src/main/java/Marge.java)
