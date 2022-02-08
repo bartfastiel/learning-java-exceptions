@@ -1,4 +1,4 @@
-class Toni {
+class Bella {
     static String machPizza() {
         System.out.println("Toni: Ich belege die Pizza");
         String pizza = "Boden";

@@ -4,11 +4,11 @@
 
 * Marge ("Margherita") sitzt im Home-Office und will eine Pizza
 * Marge bestellt eine Pizza von "Andi" ("Lieferandi")
-  * Andi fährt zu Toni
+  * Andi fährt zu Bella
   * Andi lässt sich die Pizza backen und geben
-    * Toni belegt die Pizza
-    * Toni backt sie im Ofen
-    * Toni packt sie in einen Karton
+    * Bella belegt die Pizza
+    * Bella backt sie im Ofen
+    * Bella packt sie in einen Karton
   * Andi schneidet sie die Pizza Stücke
 * Marge zahlt in Bar, an der Tür
 * Marge isst die Pizza und sagt "Mmhhh..."
@@ -28,13 +28,17 @@
 
 **Optionen**
 
-* Sagt Toni Andi und Andi Marge Bescheid und die Geschichte ist zu Ende, ohne dass Marge etwas zu essen bekommt?
-* Sagt Toni Andi und Andi Marge Bescheid, aber Marge hat einen Plan B und ist Dosenravioli?
-* Sagt Toni Andi Bescheid, der als Plan B eine Pizza bei Frederico holt?
+* Sagt Bella Andi und Andi Marge Bescheid und die Geschichte ist zu Ende, ohne dass Marge etwas zu essen bekommt?
+* Sagt Bella Andi und Andi Marge Bescheid, aber Marge hat einen Plan B und ist Dosenravioli?
+* Sagt Bella Andi Bescheid, der als Plan B eine Pizza bei Frederico holt?
   * und für Marge läuft alles wie gewöhnlich?
-* Hat Toni einen Plan B und backt einfach eine neue Pizza in der Pfanne?
+* Hat Bella einen Plan B und backt einfach eine neue Pizza in der Pfanne?
   * und für Andi und Marge läuft alles wie gewöhnlich?
 
 ## Life-Coding Marge's Pizza
 
 Siehe [Marge](src/main/java/Marge.java)
+
+## Zeigen
+
+* Wie lese ich den Stacktrace
