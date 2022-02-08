@@ -1,5 +1,7 @@
 class SuperOfen2000 {
     static String backe(String pizza) {
-        throw new OfenKaputtException("Feuer, Rauch und Funken");
+        if (false)
+            throw new OfenKaputtException("Feuer, Rauch und Funken");
+        return "gebackene " + pizza;
     }
 }

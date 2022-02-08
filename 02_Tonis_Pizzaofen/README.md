@@ -37,4 +37,4 @@
 
 ## Life-Coding Marge's Pizza
 
-Siehe [Marge](tonispizzaofen/src/main/java/Marge.java)
+Siehe [Marge](src/main/java/Marge.java)
