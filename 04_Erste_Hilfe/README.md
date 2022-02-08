@@ -8,13 +8,20 @@ sind (zweiter Return-Type zum Beispiel).
 
 ## Was mache ich, wenn IntelliJs rote Ringellinie kommt?
 
+3 Möglichkeiten:
+1. `catch` (hier einen Plan B einschlagen)
+2. `throws` (das Problem weiterreichen)
+3. `catch` und in neue Exception einpacken, z.B. `IllegalStateException`
+
 ### Beim Öffnen von Files
 
-<span style="font-family: MONOSPACE">Files.<span style="text-decoration: underline wavy red;">readString</span>(Paths.get("gibtsnicht.txt"));
+<span style="font-family: MONOSPACE">Files.<span style="text-decoration: underline wavy red;">readString</span>(
+Paths.get("gibtsnicht.txt"));
 
 > Unhandled exception: java.io.IOException
 
 Was soll passieren, wenn die Datei nicht gefunden wird?
+
 * Hast Du einen Plan B? Super! Baue ihn in den `catch`-Block!
 
 ```
@@ -26,7 +33,8 @@ try {
 }
 ```
 
-* Soll das Programm komplett abbrechen? Schade. Wrappe die `IOException` in eine unchecked-Exception. Zum Beispiel `IllegalStateException`.
+* Soll das Programm komplett abbrechen? Schade. Wrappe die `IOException` in eine unchecked-Exception. Zum
+  Beispiel `IllegalStateException`.
 
 ```
 String text;
@@ -37,7 +45,6 @@ try {
 }
 ```
 
-
 ### Beim Warten in Sekunden
 
 <span style="font-family: MONOSPACE">Thread.<span style="text-decoration: underline wavy red;">sleep</span>(1000)
@@ -45,9 +52,10 @@ try {
 
 > Unhandled exception: java.lang.InterruptedException
 
-1. ~~Die Exception per "throws" weiterreichen~~ <= Wäre eine saubere Lösung, ist aber sehr unpraktisch (unter Umständen müssen
-   viele Methoden angepasst werden; beim Überschreiben von Methoden und in Lambda-Ausdrücke nicht möglich)
-2. Im Catch-Block neu interrupten und dann dafür sorgen, dass der Ablauf zeitig beendet wird (z.B. durch eine neue RuntimeException)
+1. ~~Die Exception per "throws" weiterreichen~~ <= Wäre eine saubere Lösung, ist aber sehr unpraktisch (unter Umständen
+   müssen viele Methoden angepasst werden; beim Überschreiben von Methoden und in Lambda-Ausdrücke nicht möglich)
+2. Im Catch-Block neu interrupten und dann dafür sorgen, dass der Ablauf zeitig beendet wird (z.B. durch eine neue
+   RuntimeException)
 
 ```
 try {
@@ -63,8 +71,8 @@ try {
 ## Was mache ich bei Exceptions zu Laufzeit?
 
 * Analysiere den Stacktrace
-  * Wurden Exceptions eingepackt? ("caused by...")
-  * Suche nach Zeilen, die von Dir geschrieben Source-Dateien referenzieren
+    * Wurden Exceptions eingepackt? ("caused by...")
+    * Suche nach Zeilen, die von Dir geschrieben Source-Dateien referenzieren
 * Schreibe Tests für genau diese Funktion
 * Debugge und setze einen Breakpoint an dieser Zeile
 * Google nach dem Fehler
@@ -82,3 +90,19 @@ at Tunnelblick.run(Tunnelblick.java:3)
 at Tunnelblick.run(Tunnelblick.java:3)
 ...
 ```
+
+## Spezialfall NullPointer
+
+1. Analysiere die Zeile, in der der NullPointer auftritt:
+
+```
+int x = bla.blubb().foo.bar();
+```
+
+2. Suche alle `.`-Zeichen (Punkte) in der Code-Zeile.
+3. Jeder `.` kann die Ursache sein. Prüfe ob links vom Punkt etwas steht, dass `null` wird:
+    * Kann `bla` null sein?
+    * Kann `bla.blubb()` null sein?
+    * Kann `bla.blubb().foo` null sein?
+4. Spezialfall: wenn ein Objekt zu einem nativen Datentypen gemappt wird, prüfe ob das Objekt null ist
+    * Ist `bla.blubb().foo.bar()` vom Typ `Integer` und kann es null sein?
