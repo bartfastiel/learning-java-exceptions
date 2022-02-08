@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>02_Tonis_Pizzaofen</module>
-        <module>03_Exception_Zoo</module>
+        <module>02_Bellas_Pizzaofen</module>
+        <module>05_Exception_Zoo</module>
     </modules>
 
 </project>
