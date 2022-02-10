@@ -11,6 +11,8 @@
     <modules>
         <module>02_Bellas_Pizzaofen</module>
         <module>05_Exception_Zoo</module>
+        <module>live-coding-A</module>
+        <module>live-coding-B</module>
     </modules>
 
 </project>
