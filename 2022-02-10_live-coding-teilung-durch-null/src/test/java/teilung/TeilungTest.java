@@ -32,14 +32,4 @@ public class TeilungTest {
         Assertions.assertTrue(geschmissen);
     }
 
-    @Test
-    void expectNullPointerException_whenOrderingPizzaFromNobody() {
-        Assertions.assertThrows(
-                NullPointerException.class,
-                () -> {
-                    NobodyPizza.run();
-                }
-        );
-    }
-
 }

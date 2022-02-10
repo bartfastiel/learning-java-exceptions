@@ -11,8 +11,8 @@
     <modules>
         <module>02_Bellas_Pizzaofen</module>
         <module>05_Exception_Zoo</module>
-        <module>live-coding-A</module>
-        <module>live-coding-B</module>
+        <module>2022-02-10_live-coding-bellas_pizzaofen</module>
+        <module>2022-02-10_live-coding-teilung-durch-null</module>
     </modules>
 
 </project>
